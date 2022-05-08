@@ -1,9 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.PokemonCard">
+    tools:context=".ui.PokemonCard"
+    android:background="@color/purple_500"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/layoutparent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="@dimen/cardview_compat_inset_shadow"
+        android:background="@drawable/rectangle_shape"
+        >
+
+        <RelativeLayout
+            android:id="@+id/layoutcard"
+            android:padding="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/layoutimage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                >
+                <ImageView
+                    android:id="@+id/pokemon_image"
+                    android:background="@drawable/circle_shape"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    >
+
+                </ImageView>
+                <TextView
+                    android:id="@+id/name"
+                    android:text="Pikachu"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                </TextView>
+            </LinearLayout>
+           
+        
+            <RelativeLayout
+                android:id="@+id/layoutinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layoutimage"
+                >
+                <LinearLayout
+                    android:id="@+id/infoOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/inputs_background"
+                    >
+
+                    <TextView
+                        android:id="@+id/type"
+                        android:text="Type"
+                        android:textSize="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_width="1dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        >
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/health"
+                        android:text="Health"
+                        android:textSize="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_width="1dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        >
+                    </TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/infoTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_below="@id/infoOne"
+                    android:background="@drawable/inputs_background"
+                    >
+
+                    <TextView
+                        android:id="@+id/attack"
+                        android:text="Attack"
+                        android:textSize="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_width="1dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        >
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/defense"
+                        android:text="Defense"
+                        android:textSize="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_width="1dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        >
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/infoThree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_below="@id/infoTwo"
+                    android:background="@drawable/inputs_background"
+                    >
+
+                    <TextView
+                        android:id="@+id/speed"
+                        android:text="Type"
+                        android:textSize="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_width="1dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        >
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/timeAdded"
+                        android:text="Defense"
+                        android:textSize="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_width="1dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        >
+                    </TextView>
+                </LinearLayout>
+
+
+                
+            </RelativeLayout>
+
+       
+
+        </RelativeLayout>
+
+      
+
+    </RelativeLayout>
+
+</RelativeLayout>
