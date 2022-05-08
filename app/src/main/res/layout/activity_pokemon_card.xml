@@ -5,9 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.PokemonCard"
-    android:background="@color/purple_500"
-    >
-
+    android:background="@color/purple_500">
     <RelativeLayout
         android:id="@+id/layoutparent"
         android:layout_width="match_parent"
@@ -55,16 +53,7 @@
                     >
 
                 </TextView>
-                <TextView
-                    android:id="@+id/owner"
-                    android:text="Owner:"
-                    android:textSize="15dp"
-                    android:layout_marginBottom="16dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    >
 
-                </TextView>
             </LinearLayout>
 
 
@@ -165,36 +154,31 @@
                     </TextView>
 
                     <TextView
-                        android:id="@+id/timeAdded"
+                        android:id="@+id/owner"
                         android:layout_width="1dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="16dp"
                         android:layout_weight="1"
-                        android:text="Date catched:"
+                        android:text="Owner:"
                         android:textAlignment="center"
                         android:textSize="16dp"></TextView>
                 </LinearLayout>
 
-
             </RelativeLayout>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/releaseBtn"
+            <Button
+                android:id="@+id/releasePokemonBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layoutinfo"
                 android:layout_centerInParent="true"
-                android:layout_margin="15dp"
-                android:background="@drawable/pokeball_release_effect"
-
+                android:text="Release pokemon"
+                android:layout_margin="10dp"
                 >
 
-            </androidx.appcompat.widget.AppCompatButton>
-       
+            </Button>
 
         </RelativeLayout>
-
-      
 
     </RelativeLayout>
 

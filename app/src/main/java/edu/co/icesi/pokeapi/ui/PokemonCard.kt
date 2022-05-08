@@ -28,9 +28,7 @@ class PokemonCard : AppCompatActivity() {
         binding.attack.text = " ${binding.attack.text}  ${pokemon.attack} "
         binding.defense.text = " ${binding.defense.text}  ${pokemon.defense} "
         binding.speed.text = " ${binding.speed.text}  ${pokemon.speed} "
-        binding.timeAdded.text = " ${binding.timeAdded.text}  ${pokemon.timeAdded} "
 
 
     }
 }
-
