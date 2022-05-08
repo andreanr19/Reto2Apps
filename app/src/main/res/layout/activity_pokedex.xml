@@ -115,7 +115,7 @@
                 android:layout_margin="7dp"
                 android:layout_weight="1"
                 android:text="Search"
-                android:textSize="10dp"
+                android:textSize="8dp"
                 />
         </LinearLayout>
 

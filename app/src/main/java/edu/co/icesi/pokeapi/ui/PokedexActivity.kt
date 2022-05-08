@@ -100,24 +100,42 @@ class PokedexActivity : AppCompatActivity() {
             }
         }
 
+        binding.searchPokemonBtn.setOnClickListener {
+            var pokemonToSearch :String = binding.yourpokemonET.text.toString()
+            if(pokemonToSearch!=""){
+                pokemonToSearch= pokemonToSearch.trim()
+                pokemonToSearch= pokemonToSearch.replaceFirstChar { it.uppercaseChar() }
+
+                Firebase.firestore.collection("pokemon")
+                    .whereEqualTo("username", user.username)
+                    .whereEqualTo("name", pokemonToSearch)
+                    .get().addOnCompleteListener { task->
+                        if(task.result.size() !=0){
+                            //Limpiamos el recyclerview para solo dejar el buscado
+                            adapter.clearPokemonList()
+                            for(doc in task.result!!){
+                                var pokemonfound = doc.toObject(Pokemon::class.java)
+                                adapter.addPokemon(pokemonfound)
+                                adapter.notifyDataSetChanged()
+                            }
+                        }else{
+                            Toast.makeText(this@PokedexActivity, "the pokemon you are trying to search is not on your bag!", Toast.LENGTH_LONG).show()
+                        }
+
+                    }
+            }else{
+                Toast.makeText(this, "You should write the name of one of your pokemons.", Toast.LENGTH_LONG).show()
+                addPokemonToPokemonRecyclerView()
+            }
+        }
+
     }
 
 
     //FUNCIÓN PARA CREAR AL POKEMON
     fun createNewPokemon(name : String, images :String, types: String, stats:String) : Pokemon{
 
-        var typesArray = types.split("},")
         var statsArray = stats.split("},")
-
-        var startImage = images.indexOf("front_default")
-        var endImage = images.indexOf("front_female")
-
-        //la ruta de la imagen debe ir desde el primer caracter de front_default(caracter 252) hasta antes del primer caracter de front_female (caracter 349)
-        var imgURL = images.subSequence(startImage, endImage).toString()
-        imgURL = imgURL.replace("front_default","") //eliminar la palabra front_default de la ruta
-        imgURL = imgURL.replace("\":\"","") //eliminar el :" de la ruta
-        imgURL = imgURL.replace("\",\"","") //elimnar la , de la ruta
-
         //ARREGLO DE STATS
         var i =0
         val stats : IntArray = intArrayOf(0,0,0,0,0,0)
@@ -130,6 +148,9 @@ class PokedexActivity : AppCompatActivity() {
             stats[i] = baseStat.subSequence(start+1, end).toString().toInt()
             i++
         }
+
+
+        var typesArray = types.split("},")
 
         //ARREGLO DE TYPES
         var j = 0
@@ -145,6 +166,14 @@ class PokedexActivity : AppCompatActivity() {
             j++
         }
         typeName = typeName.subSequence(0, typeName.length-1).toString()
+        var startImage = images.indexOf("front_default")
+        var endImage = images.indexOf("front_female")
+
+        //la ruta de la imagen debe ir desde el primer caracter de front_default(caracter 252) hasta antes del primer caracter de front_female (caracter 349)
+        var imgURL = images.subSequence(startImage, endImage).toString()
+        imgURL = imgURL.replace("front_default","") //eliminar la palabra front_default de la ruta
+        imgURL = imgURL.replace("\":\"","") //eliminar el :" de la ruta
+        imgURL = imgURL.replace("\",\"","") //elimnar la , de la ruta
 
         val pokemonToCreate : Pokemon = Pokemon(
             imgURL,
