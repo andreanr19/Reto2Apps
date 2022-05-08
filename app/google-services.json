@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "808144471873",
+    "firebase_url": "https://pokeapi-25b34-default-rtdb.firebaseio.com",
+    "project_id": "pokeapi-25b34",
+    "storage_bucket": "pokeapi-25b34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:808144471873:android:f5a5116834d45ba72983c0",
+        "android_client_info": {
+          "package_name": "edu.co.icesi.pokeapi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "808144471873-ib61n1h28qmtokiult7hhv34d3ppmobg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCH56sQWVihfLQe--7v8ZyazzbbWpw0hDI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "808144471873-ib61n1h28qmtokiult7hhv34d3ppmobg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
