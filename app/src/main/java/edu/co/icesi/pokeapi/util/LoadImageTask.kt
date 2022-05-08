@@ -6,9 +6,7 @@ import android.os.AsyncTask
 import android.widget.ImageView
 import java.io.IOException
 
-class LoadImage(val imageView: ImageView) : AsyncTask<String, Void, Bitmap>() {
-
-
+class LoadImageTask(val imageView: ImageView) : AsyncTask<String, Void, Bitmap>() {
 
 
     override fun doInBackground(vararg p0: String?): Bitmap {

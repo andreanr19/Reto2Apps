@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import edu.co.icesi.pokeapi.databinding.ActivityPokedexBinding
@@ -27,7 +29,8 @@ class PokedexActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityPokedexBinding
     private lateinit var pokemonRecycler : RecyclerView
-    private lateinit var layoutManager: LinearLayoutManager
+    private lateinit var layoutManager: GridLayoutManager
+    //private lateinit var layoutManager: LinearLayoutManager
     private lateinit var adapter : PokemonsAdapter
 
     private lateinit var user : User
@@ -41,7 +44,7 @@ class PokedexActivity : AppCompatActivity() {
 
         //elementos del recycler
         pokemonRecycler = binding.pokemonsRecyclerView
-        layoutManager = LinearLayoutManager(this)
+        layoutManager = GridLayoutManager(this, 2)
         pokemonRecycler.layoutManager =  layoutManager
         pokemonRecycler.setHasFixedSize(true)
         adapter = PokemonsAdapter()

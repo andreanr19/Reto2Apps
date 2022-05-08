@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import edu.co.icesi.pokeapi.R
 import edu.co.icesi.pokeapi.model.Pokemon
-import edu.co.icesi.pokeapi.util.LoadImage
+import edu.co.icesi.pokeapi.util.LoadImageTask
 
 class PokemonsAdapter : RecyclerView.Adapter<PokemonView>() {
 
@@ -25,7 +25,7 @@ class PokemonsAdapter : RecyclerView.Adapter<PokemonView>() {
         val pokemon = pokemons[position]
         skeleton.pokemonNameRow.text = pokemon.name
 
-        var img = LoadImage(skeleton.pokemonImageRow)
+        var img = LoadImageTask(skeleton.pokemonImageRow)
         img.execute(pokemon.image)
 
     }
