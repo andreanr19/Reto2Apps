@@ -40,6 +40,7 @@ class PokedexActivity : AppCompatActivity() {
         //obtener el user loggeado
         user = intent.extras?.get("user") as User
 
+        binding.greetingsTV.text = "Hi ${user.username}! Let's catch a pokémon!"
         //elementos del recycler
         pokemonRecycler = binding.pokemonsRecyclerView
         layoutManager = GridLayoutManager(this, 2)
